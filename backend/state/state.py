@@ -12,6 +12,10 @@ class IdleState(State):
         return "Idle"
 
 
+class AudioRecording(State):
+    def __init__(self):
+        return "AudioRecording"
+
 class ProcessingState(State):
     def __str__(self):
         return "Processing"
@@ -38,6 +42,7 @@ class States(Enum):
     DISPLAYING = 2
     UNKNOWN = 3
     ERROR = 4
+    RECORDING = 5
 
 
 def create_state(state: States | int) -> State:
@@ -52,3 +57,5 @@ def create_state(state: States | int) -> State:
             return UnknownState()
         case States.ERROR:
             return ErrorState()
+        case States.RECORDING:
+            return AudioRecording()
