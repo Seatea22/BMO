@@ -5,6 +5,7 @@ from bmo import BMO
 
 def main():
     bmo_obj = BMO()
+    print(bmo_obj, bmo_obj.state)
 
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)

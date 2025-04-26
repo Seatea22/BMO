@@ -3,7 +3,7 @@ from enum import Enum
 
 
 class State(ABC):
-    def __int__(self):
+    def return_enum(self) -> Enum:
         pass
 
 
@@ -11,29 +11,49 @@ class IdleState(State):
     def __str__(self):
         return "Idle"
 
+    def return_enum(self) -> Enum:
+        return States.IDLE
+
 
 class AudioRecording(State):
-    def __init__(self):
+    def __str__(self):
         return "AudioRecording"
+
+    def return_enum(self) -> Enum:
+        return States.RECORDING
+
 
 class ProcessingState(State):
     def __str__(self):
         return "Processing"
+
+    def return_enum(self) -> Enum:
+        return States.PROCESSING
 
 
 class DisplayingState(State):
     def __str__(self):
         return "Displaying"
 
+    def return_enum(self) -> Enum:
+        return States.DISPLAYING
+
 
 class UnknownState(State):
+
     def __str__(self):
         return "Unknown"
+
+    def return_enum(self) -> Enum:
+        return States.UNKNOWN
 
 
 class ErrorState(State):
     def __str__(self):
         return "Error"
+
+    def return_enum(self) -> Enum:
+        return States.ERROR
 
 
 class States(Enum):
